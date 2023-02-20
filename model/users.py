@@ -78,7 +78,7 @@ class Post(db.Model):
 # -- a.) db.Model is like an inner layer of the onion in ORM
 # -- b.) User represents data we want to store, something that is built on db.Model
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
-class User(db.Model):
+class Houseadd(db.Model):
     __tablename__ = 'users'  # table name is plural, class name is singular
 
     # Define the User schema with "vars" from object
@@ -225,14 +225,14 @@ def initUsers():
     with app.app_context():
         """Create database and tables"""
         db.init_app(app)
-        db.create_all()
+        # db.create_all()
         
         """Tester data for table"""
-        u1 = User(name='house 1', uid='h1', beds= 'five', baths='three', price='500$/night')
-        u2 = User(name='house 2', uid='h2', beds='two', baths='one', price='200$/night')
-        u3 = User(name='house 3', uid='h3', beds='four', baths='two', price='300$/night')
-        u4 = User(name='house 4 ', uid='h4', beds='four', baths='three', price='400$/night')
-        u5 = User(name='house 5', uid='h5', beds='four', baths='three', price='100$/night')
+        u1 = Houseadd(name='house 1', uid='h1', beds= 'five', baths='three', price='500$/night')
+        u2 = Houseadd(name='house 2', uid='h2', beds='two', baths='one', price='200$/night')
+        u3 = Houseadd(name='house 3', uid='h3', beds='four', baths='two', price='300$/night')
+        u4 = Houseadd(name='house 4 ', uid='h4', beds='four', baths='three', price='400$/night')
+        u5 = Houseadd(name='house 5', uid='h5', beds='four', baths='three', price='100$/night')
 
         users = [u1, u2, u3, u4, u5]
 
